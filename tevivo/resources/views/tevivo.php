@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Romântico para Julia</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #8B0000, #DC143C); /* Tons vermelhos românticos */
+            color: #FFF5EE; /* Branco rosado */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.3); /* Fundo semi-transparente */
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        }
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .password-section {
+            display: block;
+        }
+        .message-section, .music-section {
+            display: none;
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            width: 200px;
+        }
+        button {
+            background: #FF1493; /* Rosa intenso */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #C71585; /* Rosa mais escuro */
+        }
+        .text-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            font-style: italic;
+            line-height: 1.6;
+        }
+        a {
+            color: #FFD700; /* Dourado */
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .music-item {
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Página 1: Senha -->
+        <div id="password-section" class="password-section">
+            <h1>pergunte a senha pra Juju</h1>
+            <input type="password" id="password" placeholder="Digite a senha">
+            <br>
+            <button onclick="checkPassword()">Continuar</button>
+        </div>
+
+        <!-- Página 2: Mensagem e Músicas -->
+        <div id="message-section" class="message-section">
+            <div class="text-box">
+                Eu queria tanto te pedir uma coisa…<br>
+                Me deixa ser seu último amor! <br>
+                Eu não quero ser só mais um capitulo apressado<br>
+                da sua história, nem um parênteses que você fecha quando o enredo muda<br>
+                Eu quero ser o ponto final, depois de tantas vírgulas.<br>
+                Me deixa, ser seu descanso bom de quem já não precisa procurar mais, o alívio depois de tantas tentativas, a certeza depois de tanta dúvida!<br>
+                Eu não prometo perfeição, eu nunca soube ser perfeita. <br>
+                Mas eu prometo verdade, mesmo quando ela doer, prometo presença mesmo quando o mundo puxar pra longe, prometo cuidado até nos detalhes que parecem pequeno demais.<br>
+                Deixa, deixa eu ser quem fica quando todos vão? Quem entende o silencio dos seus dias difíceis e comemora contigo os dias em que a vida é certa. Quem na se assusta com as suas feridas, porque aprendeu a reconhecer  beleza até nas cicatrizes. <br>
+                Eu não quero ser a primeira, nem a mais bonita da sua historia. Eu quero ser a última, quero ser aquela que fica, que não cansa, que não parte e não desiste.<br>
+                Me deixa ser, o amor que fecha a porta, apaga a luz do passado e abre a do futuro<br>
+                Deixa? 
+            </div>
+            <button onclick="showMusic()">Continuar</button>
+        </div>
+
+        <!-- Seção de Músicas -->
+        <div id="music-section" class="music-section">
+            <p>Julia quer que você escute essas seguintes músicas com muita atenção!</p>
+            <div class="music-item">
+                <p>“Você é meu perfume de toda manhã”</p>
+                <a href="https://open.spotify.com/track/4JSROzfWqKccwZ68DX1aJe?si=hllRP4i_R_a5TtU4K6swjA" target="_blank">Ouvir no Spotify</a>
+            </div>
+            <div class="music-item">
+                <p>“você pediu pra te esperar, eu te espero, e to esperando”</p>
+                <a href="https://open.spotify.com/track/0Fciu3fBg7fmWKeDboQpQV?si=fsth0jgPSXexSEAvn7wYtQ" target="_blank">Ouvir no Spotify</a>
+            </div>
+            <div class="music-item">
+                <p>“ falar te amo não é o suficiente, então, EU TE VIVO”</p>
+                <a href="https://open.spotify.com/track/6Z9G7ThTI9RCNAAsBW4MAy?si=vbcZrxZGTG-8i1287wWj8A" target="_blank">Ouvir no Spotify</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if (password === '31012026') {
+                document.getElementById('password-section').style.display = 'none';
+                document.getElementById('message-section').style.display = 'block';
+            } else {
+                alert('Senha incorreta! Pergunte à Juju.');
+            }
+        }
+
+        function showMusic() {
+            document.getElementById('message-section').style.display = 'none';
+            document.getElementById('music-section').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
